@@ -34,7 +34,7 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ type, text }) => {
 
   return (
     <span
-      className={`px-2 py-px text-xs font-medium rounded border border-solid ${getStatusStyles()}`}
+      className={`whitespace-nowrap px-2 py-px text-xs font-medium rounded border border-solid ${getStatusStyles()}`}
     >
       {text}
     </span>

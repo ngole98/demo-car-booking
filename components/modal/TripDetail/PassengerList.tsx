@@ -128,31 +128,31 @@ const PassengerList: React.FC = () => {
       <table className="w-full border-collapse">
         <thead>
           <tr className="bg-slate-50">
-            <th className="px-4 py-3 text-sm font-medium text-left text-slate-500">
+            <th className="px-4 py-3 text-sm text-left text-black font-bold">
               Tên khách hàng
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-left text-slate-500">
+            <th className="px-4 py-3 text-sm text-left text-black font-bold">
               Số điện thoại
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-center text-slate-500">
+            <th className="px-4 py-3 text-sm text-center text-black font-bold">
               Số lượng vé (10)
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-left text-slate-500">
+            <th className="px-4 py-3 text-sm text-left text-black font-bold">
               Điểm đón
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-left text-slate-500">
+            <th className="px-4 py-3 text-sm text-left text-black font-bold">
               Điểm trả
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-center text-slate-500">
+            <th className="px-4 py-3 text-sm text-center text-black font-bold">
               Trạng thái trung chuyển
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-center text-slate-500">
+            <th className="px-4 py-3 text-sm text-center text-black font-bold">
               Trạng thái lên xe
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-center text-slate-500">
+            <th className="px-4 py-3 text-sm text-center text-black font-bold">
               Thanh toán
             </th>
-            <th className="px-4 py-3 text-sm font-medium text-center text-slate-500"></th>
+            <th className="px-4 py-3 text-sm text-center text-black font-bold"></th>
           </tr>
         </thead>
         <tbody>
