@@ -4,7 +4,7 @@ interface Vehicle {
   id: string;
   driver: string;
   status: "error" | "warning" | "normal";
-  seats: string; // dạng "6/32"
+  seats: string; // dạng "6/32"ccc
   passengers: string;
 }
 
