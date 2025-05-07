@@ -4,10 +4,13 @@ import React, { useState } from "react";
 import StatusCard from "@/components/schedule/StatusCard";
 import TimeSlot from "@/components/schedule/TimeSlot";
 import FilterBar from "@/components/schedule/FilterBar";
+import WeekTimeSheet from "@/components/schedule/WeekTimeSheet";
 import "./styles.css";
+import MonthSheet from "@/components/schedule/MonthSheet";
 
 const SchedulePage = () => {
   const [showZoom, setShowZoom] = useState(false);
+  const [dateType, setDateType] = useState("Ngày");
 
   const statusCards = [
     {
@@ -284,12 +287,16 @@ const SchedulePage = () => {
       ],
     },
   ];
-
   return (
-    <div className="schedule-page p-6 max-w-[1920px] mx-auto relative">
-      {/* Modal phóng to */}
+    <div
+      className="schedule-page p-6 max-w-[1920px] mx-auto relative"
+      role="main"
+    >
       {showZoom && (
-        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+        <div
+          className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center"
+          role="dialog"
+        >
           <div className="bg-white rounded-[5px] border-[5px] border-white w-full h-full max-w-none max-h-none overflow-auto relative flex flex-col">
             <button
               className="absolute top-2 right-2 text-2xl font-bold text-gray-500 hover:text-gray-800 z-10"
@@ -342,13 +349,24 @@ const SchedulePage = () => {
       </div>
 
       <div className="mt-8 text-sm">
-        <FilterBar />
+        <FilterBar dateType={dateType} setDateType={setDateType} />
 
-        <div className="schedule-grid grid grid-cols-6 gap-4 mt-4">
-          {timeSlots.map((slot, index) => (
-            <TimeSlot key={index} {...slot} />
-          ))}
-        </div>
+        {dateType === "Tuần" ? (
+          <WeekTimeSheet />
+        ) : dateType === "Tháng" ? (
+          <div className="w-full mt-4">
+            <MonthSheet />
+          </div>
+        ) : (
+          <div
+            className="schedule-grid grid grid-cols-6 gap-6 mt-4 w-full"
+            style={{ minWidth: "1200px" }}
+          >
+            {timeSlots.map((slot, index) => (
+              <TimeSlot key={index} {...slot} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
